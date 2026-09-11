@@ -1,54 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Essência do Marketing</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <meta
+        name="description"
+        content="Conheça os principais conceitos de marketing de forma simples e objetiva."
+    >
+
+    <title>Essência | Marketing</title>
+
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
     <header class="header">
 
-        <div class="logo">
+        <a href="#" class="logo">
             <span>ESSÊNCIA</span>
             <small>MARKETING</small>
-        </div>
+        </a>
 
-        <nav class="navigation">
-            <button class="tab-button active" data-tab="inicio">
+
+        <nav class="navigation" aria-label="Menu principal">
+
+            <button
+                class="tab-button active"
+                data-tab="inicio"
+            >
                 Início
             </button>
 
-            <button class="tab-button" data-tab="o-que-e">
+
+            <button
+                class="tab-button"
+                data-tab="o-que-e"
+            >
                 O que é
             </button>
 
-            <button class="tab-button" data-tab="influencia">
+
+            <button
+                class="tab-button"
+                data-tab="influencia"
+            >
                 Como influencia
             </button>
 
-            <button class="tab-button" data-tab="duvidas">
+
+            <button
+                class="tab-button"
+                data-tab="duvidas"
+            >
                 Dúvidas
             </button>
+
         </nav>
 
     </header>
 
 
+
     <main>
 
-        <!-- INÍCIO -->
+        <!-- =========================
+             INÍCIO
+        ========================== -->
 
-        <section id="inicio" class="tab-content active">
+        <section
+            id="inicio"
+            class="tab-content active"
+        >
 
             <div class="hero">
 
@@ -58,20 +102,24 @@
                         CONCEITOS ESSENCIAIS
                     </p>
 
+
                     <h1>
                         Marketing que conecta
                         <span>marcas e pessoas.</span>
                     </h1>
 
+
                     <p class="hero-description">
-                        Uma introdução simples e objetiva ao universo
-                        do marketing, suas estratégias e sua influência
-                        nas decisões do dia a dia.
+                        Entenda de forma simples como o marketing
+                        funciona, como ele influencia nossas escolhas
+                        e por que ele é importante para as empresas.
                     </p>
+
 
                     <button
                         class="primary-button"
-                        onclick="abrirAba('o-que-e')">
+                        onclick="abrirAba('o-que-e')"
+                    >
                         Conheça o conceito
                     </button>
 
@@ -82,20 +130,28 @@
 
                     <img
                         src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80"
-                        alt="Equipe realizando uma reunião de negócios">
+                        alt="Equipe reunida em uma reunião de negócios"
+                    >
 
                 </div>
 
             </div>
 
 
+
+            <!-- CARDS -->
+
             <div class="intro-cards">
 
-                <article class="intro-card">
+                <article class="intro-card pink-card">
 
-                    <div class="card-number">01</div>
+                    <span class="card-number">
+                        01
+                    </span>
 
-                    <h3>Estratégia</h3>
+                    <h3>
+                        Estratégia
+                    </h3>
 
                     <p>
                         Planejamento para alcançar objetivos
@@ -105,29 +161,37 @@
                 </article>
 
 
-                <article class="intro-card">
+                <article class="intro-card lavender-card">
 
-                    <div class="card-number">02</div>
+                    <span class="card-number">
+                        02
+                    </span>
 
-                    <h3>Comunicação</h3>
+                    <h3>
+                        Comunicação
+                    </h3>
 
                     <p>
-                        Formas de apresentar uma marca e
-                        estabelecer uma comunicação clara.
+                        Maneiras de apresentar uma marca
+                        e estabelecer uma comunicação clara.
                     </p>
 
                 </article>
 
 
-                <article class="intro-card">
+                <article class="intro-card green-card">
 
-                    <div class="card-number">03</div>
+                    <span class="card-number">
+                        03
+                    </span>
 
-                    <h3>Relacionamento</h3>
+                    <h3>
+                        Relacionamento
+                    </h3>
 
                     <p>
-                        Construção de vínculos duradouros
-                        entre empresas e seus clientes.
+                        Construção de vínculos entre empresas
+                        e seus clientes.
                     </p>
 
                 </article>
@@ -137,9 +201,15 @@
         </section>
 
 
-        <!-- O QUE É -->
 
-        <section id="o-que-e" class="tab-content">
+        <!-- =========================
+             O QUE É MARKETING
+        ========================== -->
+
+        <section
+            id="o-que-e"
+            class="tab-content"
+        >
 
             <div class="section-heading">
 
@@ -147,7 +217,11 @@
                     FUNDAMENTOS
                 </p>
 
-                <h2>O que é marketing?</h2>
+
+                <h2>
+                    O que é marketing?
+                </h2>
+
 
                 <p>
                     Marketing é o conjunto de estratégias utilizadas
@@ -158,33 +232,38 @@
             </div>
 
 
+
             <div class="about-layout">
 
                 <div class="about-text">
 
                     <span class="line"></span>
 
+
                     <h3>
                         Mais do que divulgar,
                         é compreender.
                     </h3>
 
-                    <p>
-                        Uma estratégia de marketing começa pela
-                        compreensão das pessoas. É preciso identificar
-                        necessidades, desejos e comportamentos.
-                    </p>
 
                     <p>
-                        A partir dessas informações, uma empresa pode
-                        desenvolver produtos, serviços e comunicações
-                        mais relevantes para seu público.
+                        Uma estratégia de marketing começa pela
+                        compreensão das pessoas.
                     </p>
+
+
+                    <p>
+                        É necessário entender necessidades,
+                        desejos, comportamentos e expectativas
+                        para criar uma comunicação relevante.
+                    </p>
+
 
                     <p>
                         Por isso, marketing não significa apenas
-                        publicidade. Ele está presente em diferentes
-                        decisões de uma empresa.
+                        publicidade. Ele também está presente
+                        no desenvolvimento de produtos, preços,
+                        atendimento e relacionamento.
                     </p>
 
                 </div>
@@ -194,11 +273,13 @@
 
                     <img
                         src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80"
-                        alt="Profissionais trabalhando em uma estratégia">
+                        alt="Profissionais analisando uma estratégia"
+                    >
 
                 </div>
 
             </div>
+
 
 
             <div class="quote-box">
@@ -213,9 +294,15 @@
         </section>
 
 
-        <!-- INFLUÊNCIA -->
 
-        <section id="influencia" class="tab-content">
+        <!-- =========================
+             COMO INFLUENCIA
+        ========================== -->
+
+        <section
+            id="influencia"
+            class="tab-content"
+        >
 
             <div class="section-heading">
 
@@ -223,7 +310,11 @@
                     NO DIA A DIA
                 </p>
 
-                <h2>Como o marketing influencia?</h2>
+
+                <h2>
+                    Como o marketing influencia?
+                </h2>
+
 
                 <p>
                     Estamos em contato com estratégias de marketing
@@ -233,27 +324,42 @@
             </div>
 
 
+
             <div class="influence-grid">
 
-                <article class="influence-card">
+                <article class="influence-card pink-card">
 
-                    <span class="card-number">01</span>
+                    <span class="card-number">
+                        01
+                    </span>
 
-                    <h3>Posicionamento</h3>
+
+                    <h3>
+                        Posicionamento
+                    </h3>
+
 
                     <p>
-                        A maneira como uma empresa se apresenta ajuda
-                        o público a entender seus valores e diferenciais.
+                        A maneira como uma empresa se apresenta
+                        ajuda o público a compreender seus valores,
+                        características e diferenciais.
                     </p>
 
                 </article>
 
 
-                <article class="influence-card">
 
-                    <span class="card-number">02</span>
+                <article class="influence-card blue-card">
 
-                    <h3>Experiência</h3>
+                    <span class="card-number">
+                        02
+                    </span>
+
+
+                    <h3>
+                        Experiência
+                    </h3>
+
 
                     <p>
                         Desde o primeiro contato até o atendimento,
@@ -264,29 +370,45 @@
                 </article>
 
 
-                <article class="influence-card">
 
-                    <span class="card-number">03</span>
+                <article class="influence-card green-card">
 
-                    <h3>Conteúdo</h3>
+                    <span class="card-number">
+                        03
+                    </span>
+
+
+                    <h3>
+                        Conteúdo
+                    </h3>
+
 
                     <p>
-                        Informações, campanhas e conteúdos ajudam
-                        empresas a estabelecer diálogo com seu público.
+                        Informações e conteúdos ajudam empresas
+                        a estabelecer diálogo e relacionamento
+                        com seu público.
                     </p>
 
                 </article>
 
 
-                <article class="influence-card">
 
-                    <span class="card-number">04</span>
+                <article class="influence-card peach-card">
 
-                    <h3>Decisão</h3>
+                    <span class="card-number">
+                        04
+                    </span>
+
+
+                    <h3>
+                        Decisão
+                    </h3>
+
 
                     <p>
                         Preço, apresentação, avaliações e comunicação
-                        podem participar do processo de decisão de compra.
+                        podem participar do processo de decisão
+                        de compra.
                     </p>
 
                 </article>
@@ -296,9 +418,15 @@
         </section>
 
 
-        <!-- DÚVIDAS -->
 
-        <section id="duvidas" class="tab-content">
+        <!-- =========================
+             DÚVIDAS
+        ========================== -->
+
+        <section
+            id="duvidas"
+            class="tab-content"
+        >
 
             <div class="section-heading">
 
@@ -306,17 +434,24 @@
                     PERGUNTAS FREQUENTES
                 </p>
 
-                <h2>Dúvidas sobre marketing</h2>
+
+                <h2>
+                    Dúvidas sobre marketing
+                </h2>
+
 
                 <p>
-                    Confira algumas respostas para compreender melhor
-                    os principais conceitos.
+                    Encontre respostas simples para compreender
+                    melhor os principais conceitos.
                 </p>
 
             </div>
 
 
+
             <div class="faq">
+
+                <!-- Pergunta 1 -->
 
                 <div class="faq-item">
 
@@ -326,23 +461,30 @@
                             Marketing é apenas publicidade?
                         </span>
 
-                        <strong>+</strong>
+                        <strong>
+                            +
+                        </strong>
 
                     </button>
+
 
                     <div class="faq-answer">
 
                         <p>
-                            Não. Publicidade é apenas uma das ferramentas
-                            utilizadas pelo marketing. O marketing também
-                            envolve pesquisa, estratégia, posicionamento,
-                            produto, preço, relacionamento e comunicação.
+                            Não. Publicidade é apenas uma das
+                            ferramentas utilizadas pelo marketing.
+                            Marketing também envolve pesquisa,
+                            estratégia, posicionamento, produto,
+                            preço, relacionamento e comunicação.
                         </p>
 
                     </div>
 
                 </div>
 
+
+
+                <!-- Pergunta 2 -->
 
                 <div class="faq-item">
 
@@ -352,22 +494,29 @@
                             Qual é o objetivo do marketing?
                         </span>
 
-                        <strong>+</strong>
+                        <strong>
+                            +
+                        </strong>
 
                     </button>
+
 
                     <div class="faq-answer">
 
                         <p>
-                            Seu objetivo é compreender o público e criar
-                            estratégias capazes de gerar valor para as
-                            pessoas e para a organização.
+                            O objetivo é compreender o público
+                            e desenvolver estratégias capazes
+                            de gerar valor para as pessoas e
+                            para a organização.
                         </p>
 
                     </div>
 
                 </div>
 
+
+
+                <!-- Pergunta 3 -->
 
                 <div class="faq-item">
 
@@ -377,22 +526,29 @@
                             Pequenas empresas precisam de marketing?
                         </span>
 
-                        <strong>+</strong>
+                        <strong>
+                            +
+                        </strong>
 
                     </button>
+
 
                     <div class="faq-answer">
 
                         <p>
-                            Sim. O marketing pode ajudar empresas de
-                            diferentes tamanhos a conhecer seu público,
-                            fortalecer sua marca e conquistar novos clientes.
+                            Sim. O marketing pode ajudar empresas
+                            de diferentes tamanhos a conhecer
+                            seu público, fortalecer sua marca
+                            e conquistar novos clientes.
                         </p>
 
                     </div>
 
                 </div>
 
+
+
+                <!-- Pergunta 4 -->
 
                 <div class="faq-item">
 
@@ -402,16 +558,19 @@
                             O marketing está presente nas redes sociais?
                         </span>
 
-                        <strong>+</strong>
+                        <strong>
+                            +
+                        </strong>
 
                     </button>
+
 
                     <div class="faq-answer">
 
                         <p>
-                            Sim. As redes sociais são um dos canais utilizados
-                            para comunicação, relacionamento, divulgação de
-                            conteúdo e construção de posicionamento.
+                            Sim. As redes sociais são canais utilizados
+                            para comunicação, relacionamento, divulgação
+                            de conteúdo e construção de posicionamento.
                         </p>
 
                     </div>
@@ -425,15 +584,22 @@
     </main>
 
 
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
     <footer>
 
         <div class="footer-logo">
             ESSÊNCIA MARKETING
         </div>
 
+
         <p>
             Informação, estratégia e comunicação.
         </p>
+
 
         <span>
             © 2026 Essência Marketing
@@ -442,7 +608,11 @@
     </footer>
 
 
+
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
