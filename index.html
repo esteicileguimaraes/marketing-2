@@ -1,13 +1,10 @@
-Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**. Não alterei CSS, JavaScript, estrutura ou funcionalidades.
-
-```
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Essência Marketing</title>
+    <title>Essência Marketing | Conhecimento que conecta</title>
 
     <style>
         * {
@@ -29,15 +26,16 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
         /* =========================
            CABEÇALHO
-        ========================= */
+        ========================== */
 
         header {
             width: 100%;
-            background: #ffffff;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .navbar {
@@ -58,9 +56,13 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
             text-decoration: none;
         }
 
+        .logo span {
+            color: #8f4328;
+        }
+
         .menu {
             display: flex;
-            gap: 10px;
+            gap: 5px;
             list-style: none;
         }
 
@@ -68,7 +70,7 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
             text-decoration: none;
             color: #333;
             font-weight: 600;
-            padding: 10px 14px;
+            padding: 10px 13px;
             border-radius: 8px;
             transition: 0.3s;
         }
@@ -89,7 +91,7 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
         }
 
         /* =========================
-           SEÇÕES
+           GERAL
         ========================== */
 
         section {
@@ -105,32 +107,30 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
             margin: auto;
         }
 
-        /* =========================
-           INÍCIO
-        ========================== */
-
-        #inicio {
-            background:
-                linear-gradient(
-                    rgba(255, 250, 245, 0.92),
-                    rgba(255, 250, 245, 0.92)
-                ),
-                radial-gradient(circle at top right, #f4c7b5, transparent 40%);
-
+        .titulo {
             text-align: center;
+            margin-bottom: 55px;
         }
 
-        .hero h1 {
-            font-size: clamp(40px, 6vw, 72px);
+        .titulo h2 {
+            font-size: 42px;
             color: #8f4328;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
-        .hero p {
+        .titulo p {
+            color: #666;
             max-width: 750px;
-            margin: 0 auto 35px;
-            font-size: 20px;
-            color: #555;
+            margin: auto;
+        }
+
+        .subtitulo {
+            color: #b85c38;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
         .botao {
@@ -164,24 +164,69 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
         }
 
         /* =========================
-           TÍTULOS
+           INÍCIO
         ========================== */
 
-        .titulo {
+        #inicio {
+            min-height: calc(100vh - 75px);
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(244, 199, 181, 0.8),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(255, 225, 205, 0.8),
+                    transparent 25%
+                ),
+                #fffaf5;
+
             text-align: center;
-            margin-bottom: 55px;
         }
 
-        .titulo h2 {
-            font-size: 42px;
+        .hero {
+            max-width: 900px;
+        }
+
+        .hero .subtitulo {
+            font-size: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.1;
             color: #8f4328;
-            margin-bottom: 12px;
+            margin-bottom: 25px;
         }
 
-        .titulo p {
-            color: #666;
-            max-width: 700px;
-            margin: auto;
+        .hero h1 span {
+            color: #b85c38;
+        }
+
+        .hero p {
+            max-width: 780px;
+            margin: 0 auto 35px;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .hero-destaques {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 55px;
+            flex-wrap: wrap;
+        }
+
+        .hero-destaque {
+            background: white;
+            padding: 15px 22px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            color: #8f4328;
+            font-weight: bold;
         }
 
         /* =========================
@@ -222,6 +267,32 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
             margin-bottom: 15px;
         }
 
+        .estatisticas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .estatistica {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .estatistica strong {
+            display: block;
+            font-size: 28px;
+            color: #b85c38;
+        }
+
+        .estatistica span {
+            font-size: 14px;
+            color: #666;
+        }
+
         /* =========================
            O QUE É MARKETING
         ========================== */
@@ -242,11 +313,13 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
             border-radius: 18px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
             transition: 0.3s;
+            border: 1px solid transparent;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            border-color: #f0c5b1;
         }
 
         .icone {
@@ -275,11 +348,172 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
         }
 
         /* =========================
+           BENEFÍCIOS
+        ========================== */
+
+        #beneficios {
+            background: white;
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .beneficio {
+            display: flex;
+            gap: 18px;
+            padding: 25px;
+            background: #fffaf5;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .beneficio:hover {
+            transform: translateX(5px);
+            background: #fff1e9;
+        }
+
+        .beneficio-icone {
+            min-width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #b85c38;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+        .beneficio h3 {
+            color: #8f4328;
+            margin-bottom: 7px;
+        }
+
+        .beneficio p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           4 PS
+        ========================== */
+
+        #quatrops {
+            background: #fffaf5;
+        }
+
+        .ps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .p-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .p-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .p-letra {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #b85c38;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .p-card h3 {
+            color: #8f4328;
+            margin-bottom: 10px;
+        }
+
+        .p-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           DIGITAL X TRADICIONAL
+        ========================== */
+
+        #tipos {
+            background: white;
+        }
+
+        .comparacao {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .tipo {
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .tipo-tradicional {
+            background: #fff1e9;
+            border-left: 6px solid #b85c38;
+        }
+
+        .tipo-digital {
+            background: #f7ebe5;
+            border-left: 6px solid #8f4328;
+        }
+
+        .tipo h3 {
+            color: #8f4328;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .tipo p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .tipo ul {
+            list-style: none;
+        }
+
+        .tipo li {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .tipo li::before {
+            content: "✓";
+            color: #b85c38;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* =========================
            COMO FUNCIONA
         ========================== */
 
         #funciona {
-            background: white;
+            background: #fffaf5;
         }
 
         .passos {
@@ -317,6 +551,123 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
         .passo p {
             color: #666;
+        }
+
+        /* =========================
+           JORNADA DO CONSUMIDOR
+        ========================== */
+
+        #jornada {
+            background: white;
+        }
+
+        .jornada {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .jornada-item {
+            position: relative;
+            padding: 30px 20px;
+            text-align: center;
+            background: #fffaf5;
+            border-radius: 18px;
+        }
+
+        .jornada-item .icone {
+            margin: 0 auto 15px;
+        }
+
+        .jornada-item h3 {
+            color: #8f4328;
+            margin-bottom: 10px;
+        }
+
+        .jornada-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TIPOS DE MARKETING
+        ========================== */
+
+        #estrategias {
+            background: #fffaf5;
+        }
+
+        .estrategias-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .estrategia {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .estrategia h3 {
+            color: #8f4328;
+            margin-bottom: 10px;
+        }
+
+        .estrategia p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           RESULTADOS
+        ========================== */
+
+        #resultados {
+            background: white;
+        }
+
+        .resultados-box {
+            background: linear-gradient(135deg, #8f4328, #b85c38);
+            color: white;
+            padding: 55px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .resultados-box h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .resultados-box p {
+            max-width: 750px;
+            margin: auto auto 30px;
+            color: #fff4ee;
+        }
+
+        .metricas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .metrica {
+            background: rgba(255,255,255,0.12);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .metrica strong {
+            display: block;
+            font-size: 25px;
+        }
+
+        .metrica span {
+            font-size: 13px;
+            color: #ffe8dd;
         }
 
         /* =========================
@@ -382,14 +733,55 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
         }
 
         /* =========================
+           CHAMADA FINAL
+        ========================== */
+
+        #conclusao {
+            min-height: 60vh;
+            background:
+                linear-gradient(
+                    rgba(143, 67, 40, 0.95),
+                    rgba(184, 92, 56, 0.95)
+                );
+            color: white;
+            text-align: center;
+        }
+
+        .conclusao {
+            max-width: 800px;
+        }
+
+        .conclusao h2 {
+            font-size: clamp(35px, 5vw, 55px);
+            margin-bottom: 20px;
+        }
+
+        .conclusao p {
+            font-size: 19px;
+            color: #fff1e9;
+            margin-bottom: 30px;
+        }
+
+        .botao-branco {
+            background: white;
+            color: #8f4328;
+            border-color: white;
+        }
+
+        .botao-branco:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* =========================
            RODAPÉ
         ========================== */
 
         footer {
-            background: #8f4328;
+            background: #5f2d1d;
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 40px 20px;
         }
 
         footer p {
@@ -446,15 +838,30 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                 display: block;
             }
 
-            .sobre-grid {
+            .sobre-grid,
+            .comparacao {
                 grid-template-columns: 1fr;
             }
 
-            .cards {
+            .cards,
+            .estrategias-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .passos,
+            .jornada {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .ps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .beneficios-grid {
                 grid-template-columns: 1fr;
             }
 
-            .passos {
+            .metricas {
                 grid-template-columns: 1fr 1fr;
             }
         }
@@ -486,12 +893,32 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                 margin-left: 0;
             }
 
-            .passos {
+            .cards,
+            .estrategias-grid,
+            .passos,
+            .jornada,
+            .ps-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .metricas {
+                grid-template-columns: 1fr;
+            }
+
+            .resultados-box {
+                padding: 35px 20px;
+            }
+
+            .resultados-box h2 {
+                font-size: 30px;
             }
 
             .navbar {
                 padding: 0 18px;
+            }
+
+            .estatisticas {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -507,7 +934,7 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
         <nav class="navbar">
 
             <a href="#inicio" class="logo">
-                Essência Marketing
+                Essência <span>Marketing</span>
             </a>
 
             <button
@@ -533,19 +960,31 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
                 <li>
                     <a href="#marketing" class="menu-link">
-                        O que é Marketing?
+                        Marketing
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#beneficios" class="menu-link">
+                        Benefícios
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#quatrops" class="menu-link">
+                        4 Ps
                     </a>
                 </li>
 
                 <li>
                     <a href="#funciona" class="menu-link">
-                        Como ele funciona?
+                        Como funciona
                     </a>
                 </li>
 
                 <li>
                     <a href="#duvidas" class="menu-link">
-                        Dúvidas Frequentes
+                        Dúvidas
                     </a>
                 </li>
 
@@ -553,6 +992,7 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
         </nav>
     </header>
+
 
     <main>
 
@@ -564,15 +1004,20 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
             <div class="container hero">
 
+                <div class="subtitulo">
+                    Estratégia • Comunicação • Conexão
+                </div>
+
                 <h1>
                     Marketing que transforma
-                    ideias em conexões.
+                    <span>ideias em conexões.</span>
                 </h1>
 
                 <p>
-                    Entenda como o marketing aproxima marcas e pessoas,
-                    cria valor e transforma estratégias em experiências
-                    que fazem a diferença.
+                    O marketing está muito além da publicidade.
+                    Ele envolve pessoas, estratégias, criatividade,
+                    comunicação e decisões que ajudam marcas a criar
+                    valor e construir relacionamentos duradouros.
                 </p>
 
                 <a href="#marketing" class="botao">
@@ -580,12 +1025,33 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                 </a>
 
                 <a href="#funciona" class="botao botao-secundario">
-                    Descubra como funciona
+                    Como funciona?
                 </a>
+
+                <div class="hero-destaques">
+
+                    <div class="hero-destaque">
+                        🎯 Público
+                    </div>
+
+                    <div class="hero-destaque">
+                        💡 Estratégia
+                    </div>
+
+                    <div class="hero-destaque">
+                        📢 Comunicação
+                    </div>
+
+                    <div class="hero-destaque">
+                        📊 Resultados
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
+
 
         <!-- =========================
              SOBRE
@@ -597,11 +1063,18 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
                 <div class="titulo">
 
-                    <h2>Sobre</h2>
+                    <div class="subtitulo">
+                        Entenda o conceito
+                    </div>
+
+                    <h2>
+                        O marketing está em todos os lugares
+                    </h2>
 
                     <p>
-                        Entenda como o marketing contribui para aproximar
-                        empresas, marcas e pessoas.
+                        Desde uma pequena empresa até grandes marcas,
+                        o marketing ajuda a compreender pessoas,
+                        identificar oportunidades e criar experiências.
                     </p>
 
                 </div>
@@ -615,39 +1088,73 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                         </h3>
 
                         <p>
-                            O marketing está presente em cada interação
-                            entre marcas e pessoas. Mais do que divulgar
-                            produtos e serviços, ele busca compreender
-                            o público, identificar suas necessidades e
-                            criar soluções que realmente façam sentido.
+                            O marketing está presente em praticamente
+                            todas as relações entre marcas e consumidores.
+                            Ele não significa apenas criar anúncios:
+                            significa entender pessoas e desenvolver
+                            estratégias para entregar valor.
                         </p>
 
                         <p>
-                            Por meio de pesquisa, planejamento, comunicação
-                            e estratégias, o marketing ajuda as empresas
-                            a construir relacionamentos, fortalecer suas
-                            marcas e gerar valor para seus consumidores.
+                            Pesquisa, planejamento, posicionamento,
+                            comunicação, relacionamento e análise fazem
+                            parte de um processo que busca aproximar
+                            empresas de seus públicos.
                         </p>
 
-                        <a href="#marketing" class="botao">
-                            Conheça o Marketing
+                        <p>
+                            Quando bem planejado, o marketing pode ajudar
+                            uma marca a ser reconhecida, gerar confiança,
+                            conquistar novos clientes e manter
+                            relacionamentos de longo prazo.
+                        </p>
+
+                        <a href="#beneficios" class="botao">
+                            Ver benefícios
                         </a>
 
                     </div>
 
-                    <div class="caixa-destaque">
+                    <div>
 
-                        <h3>
-                            Por que o marketing é tão importante?
-                        </h3>
+                        <div class="caixa-destaque">
 
-                        <p>
-                            Porque conhecer o público é o primeiro passo
-                            para criar estratégias mais eficientes. O
-                            marketing ajuda a identificar oportunidades,
-                            fortalecer marcas, conquistar clientes e
-                            construir relacionamentos duradouros.
-                        </p>
+                            <h3>
+                                Por que o marketing é importante?
+                            </h3>
+
+                            <p>
+                                Porque nenhuma empresa existe sem pessoas.
+                                Conhecer o público permite criar produtos,
+                                serviços e experiências mais relevantes,
+                                além de tomar decisões com mais estratégia.
+                            </p>
+
+                        </div>
+
+                        <div class="estatisticas">
+
+                            <div class="estatistica">
+                                <strong>🎯</strong>
+                                <span>Conhecimento do público</span>
+                            </div>
+
+                            <div class="estatistica">
+                                <strong>💡</strong>
+                                <span>Criação de valor</span>
+                            </div>
+
+                            <div class="estatistica">
+                                <strong>🤝</strong>
+                                <span>Relacionamento</span>
+                            </div>
+
+                            <div class="estatistica">
+                                <strong>📈</strong>
+                                <span>Crescimento</span>
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -656,6 +1163,7 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
             </div>
 
         </section>
+
 
         <!-- =========================
              O QUE É MARKETING
@@ -667,15 +1175,19 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
 
                 <div class="titulo">
 
+                    <div class="subtitulo">
+                        Conceito
+                    </div>
+
                     <h2>
                         O que é Marketing?
                     </h2>
 
                     <p>
-                        Marketing é o conjunto de estratégias utilizadas
-                        para compreender pessoas, criar valor, comunicar
-                        ideias e construir relacionamentos entre marcas
-                        e seus públicos.
+                        Marketing é o conjunto de conhecimentos, estratégias
+                        e ações utilizadas para compreender o mercado,
+                        criar valor, comunicar ideias e construir
+                        relacionamentos com os consumidores.
                     </p>
 
                 </div>
@@ -693,14 +1205,13 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                         </h3>
 
                         <p>
-                            Tudo começa com a compreensão do público.
-                            O marketing busca conhecer seus desejos,
-                            necessidades, hábitos, comportamentos e
-                            expectativas para criar estratégias mais
-                            relevantes.
+                            Antes de criar uma estratégia, é importante
+                            entender quem são as pessoas, quais são seus
+                            desejos, necessidades, hábitos e comportamentos.
                         </p>
 
                     </div>
+
 
                     <div class="card">
 
@@ -713,13 +1224,13 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                         </h3>
 
                         <p>
-                            Com base no conhecimento do público, as
-                            empresas podem desenvolver produtos, serviços
-                            e experiências capazes de atender às necessidades
-                            dos consumidores e gerar valor.
+                            O marketing busca desenvolver produtos,
+                            serviços e experiências que sejam relevantes
+                            e úteis para o público.
                         </p>
 
                     </div>
+
 
                     <div class="card">
 
@@ -732,454 +1243,4 @@ Claro. Abaixo está o **mesmo código**, mas com **somente os textos alterados**
                         </h3>
 
                         <p>
-                            Uma boa estratégia também precisa saber
-                            comunicar. O marketing utiliza diferentes
-                            canais e formatos para transmitir mensagens,
-                            despertar interesse e aproximar marcas de
-                            seus públicos.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div style="text-align:center; margin-top:45px;">
-
-                    <a href="#funciona" class="botao">
-                        Descubra como funciona
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- =========================
-             COMO FUNCIONA
-        ========================== -->
-
-        <section id="funciona">
-
-            <div class="container">
-
-                <div class="titulo">
-
-                    <h2>
-                        Como o Marketing funciona?
-                    </h2>
-
-                    <p>
-                        O marketing funciona como um processo contínuo
-                        de conhecimento, planejamento, execução e análise,
-                        permitindo que as empresas tomem decisões mais
-                        estratégicas.
-                    </p>
-
-                </div>
-
-                <div class="passos">
-
-                    <div class="passo">
-
-                        <div class="numero">
-                            1
-                        </div>
-
-                        <h3>
-                            Pesquisa
-                        </h3>
-
-                        <p>
-                            Antes de agir, é importante conhecer o mercado,
-                            os concorrentes e, principalmente, as pessoas
-                            que a empresa deseja alcançar.
-                        </p>
-
-                    </div>
-
-                    <div class="passo">
-
-                        <div class="numero">
-                            2
-                        </div>
-
-                        <h3>
-                            Planejamento
-                        </h3>
-
-                        <p>
-                            Com as informações em mãos, são definidos
-                            objetivos, estratégias e ações para alcançar
-                            o público certo e gerar os resultados desejados.
-                        </p>
-
-                    </div>
-
-                    <div class="passo">
-
-                        <div class="numero">
-                            3
-                        </div>
-
-                        <h3>
-                            Ação
-                        </h3>
-
-                        <p>
-                            É hora de colocar o planejamento em prática
-                            por meio de campanhas, conteúdos, produtos,
-                            serviços e diferentes canais de comunicação.
-                        </p>
-
-                    </div>
-
-                    <div class="passo">
-
-                        <div class="numero">
-                            4
-                        </div>
-
-                        <h3>
-                            Análise
-                        </h3>
-
-                        <p>
-                            Depois da execução, os resultados são avaliados
-                            para entender o que funcionou, identificar
-                            oportunidades e aprimorar as próximas estratégias.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div style="text-align:center; margin-top:45px;">
-
-                    <a href="#duvidas" class="botao">
-                        Ainda tenho uma dúvida
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- =========================
-             DÚVIDAS FREQUENTES
-        ========================== -->
-
-        <section id="duvidas">
-
-            <div class="container">
-
-                <div class="titulo">
-
-                    <h2>
-                        Dúvidas Frequentes
-                    </h2>
-
-                    <p>
-                        Encontre respostas para algumas das principais
-                        dúvidas sobre marketing e entenda como ele está
-                        presente no dia a dia.
-                    </p>
-
-                </div>
-
-                <div class="faq">
-
-                    <div class="pergunta">
-
-                        <button>
-                            <span>
-                                Afinal, o que é marketing?
-                            </span>
-
-                            <span class="sinal">
-                                +
-                            </span>
-                        </button>
-
-                        <div class="resposta">
-
-                            <p>
-                                Marketing é um conjunto de estratégias
-                                utilizadas para compreender as necessidades
-                                das pessoas, criar valor e construir uma
-                                relação entre empresas, marcas e seus públicos.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="pergunta">
-
-                        <button>
-
-                            <span>
-                                Marketing é apenas publicidade?
-                            </span>
-
-                            <span class="sinal">
-                                +
-                            </span>
-
-                        </button>
-
-                        <div class="resposta">
-
-                            <p>
-                                Não. A publicidade é apenas uma das
-                                ferramentas do marketing. Ele também envolve
-                                pesquisa, planejamento, desenvolvimento de
-                                produtos, definição de preços, distribuição,
-                                relacionamento com clientes e análise de
-                                resultados.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="pergunta">
-
-                        <button>
-
-                            <span>
-                                Pequenas empresas também precisam de marketing?
-                            </span>
-
-                            <span class="sinal">
-                                +
-                            </span>
-
-                        </button>
-
-                        <div class="resposta">
-
-                            <p>
-                                Sim. O marketing é importante para empresas
-                                de todos os tamanhos. Ele ajuda pequenos
-                                negócios a conhecer melhor seus clientes,
-                                aumentar sua visibilidade, fortalecer sua
-                                marca e conquistar novas oportunidades.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="pergunta">
-
-                        <button>
-
-                            <span>
-                                Qual é a importância das redes sociais para o marketing?
-                            </span>
-
-                            <span class="sinal">
-                                +
-                            </span>
-
-                        </button>
-
-                        <div class="resposta">
-
-                            <p>
-                                As redes sociais são importantes canais de
-                                comunicação e relacionamento. Elas permitem
-                                que as marcas compartilhem conteúdos, conheçam
-                                melhor seu público, criem conexões e mantenham
-                                uma presença digital relevante.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="pergunta">
-
-                        <button>
-
-                            <span>
-                                O marketing pode ajudar a aumentar as vendas?
-                            </span>
-
-                            <span class="sinal">
-                                +
-                            </span>
-
-                        </button>
-
-                        <div class="resposta">
-
-                            <p>
-                                Sim. Uma estratégia de marketing bem planejada
-                                pode aumentar a visibilidade da marca, atrair
-                                potenciais clientes, melhorar a experiência
-                                do consumidor e contribuir para o crescimento
-                                das vendas.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="pergunta">
-
-                        <button>
-
-                            <span>
-                                O marketing está presente no nosso dia a dia?
-                            </span>
-
-                            <span class="sinal">
-                                +
-                            </span>
-
-                        </button>
-
-                        <div class="resposta">
-
-                            <p>
-                                Sim. O marketing está presente em praticamente
-                                todos os lugares: nos anúncios que vemos,
-                                nas embalagens, nos preços, nas lojas, nos
-                                aplicativos, nas redes sociais e até na forma
-                                como as marcas criam experiências para seus
-                                consumidores.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div style="text-align:center; margin-top:40px;">
-
-                    <a href="#inicio" class="botao">
-                        Voltar ao início
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
-
-    <footer>
-
-        <p>
-            <strong>Essência Marketing</strong>
-        </p>
-
-        <p>
-            Estratégias que aproximam marcas, pessoas e oportunidades.
-        </p>
-
-        <a href="#inicio" class="voltar">
-            ↑ Voltar ao início
-        </a>
-
-    </footer>
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        /* =========================
-           MENU MOBILE
-        ========================== */
-
-        const menuButton = document.getElementById("menuButton");
-        const menu = document.getElementById("menu");
-
-        menuButton.addEventListener("click", function () {
-
-            menu.classList.toggle("aberto");
-
-        });
-
-        /* =========================
-           FECHAR MENU AO CLICAR
-        ========================== */
-
-        const links = document.querySelectorAll(".menu-link");
-
-        links.forEach(function(link) {
-
-            link.addEventListener("click", function() {
-
-                menu.classList.remove("aberto");
-
-            });
-
-        });
-
-        /* =========================
-           DESTACAR ABA ATIVA
-        ========================== */
-
-        const sections = document.querySelectorAll("section");
-
-        window.addEventListener("scroll", function() {
-
-            let atual = "";
-
-            sections.forEach(function(section) {
-
-                const topo = section.offsetTop - 150;
-
-                if (window.scrollY >= topo) {
-                    atual = section.getAttribute("id");
-                }
-
-            });
-
-            links.forEach(function(link) {
-
-                link.classList.remove("active");
-
-                if (link.getAttribute("href") === "#" + atual) {
-                    link.classList.add("active");
-                }
-
-            });
-
-        });
-
-        /* =========================
-           DÚVIDAS FREQUENTES
-        ========================== */
-
-        const perguntas = document.querySelectorAll(".pergunta");
-
-        perguntas.forEach(function(pergunta) {
-
-            const botao = pergunta.querySelector("button");
-
-            botao.addEventListener("click", function() {
-
-                pergunta.classList.toggle("aberta");
-
-            });
-
-        });
-
-    </script>
-
-</body>
-</html>
-```
+                            Uma marca precisa saberebe
