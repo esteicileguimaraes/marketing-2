@@ -6,16 +6,7 @@
 
     <title>Essência Marketing</title>
 
-    <meta
-        name="description"
-        content="Conheça o conceito de marketing, sua influência e sua importância para marcas e pessoas."
-    >
-
     <style>
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -28,342 +19,213 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            color: #242424;
-            background: #fffaf7;
+            background: #fffaf5;
+            color: #333;
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
         /* =========================
-           HEADER
+           CABEÇALHO
         ========================= */
 
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
             z-index: 1000;
-
-            background: rgba(255, 250, 247, 0.95);
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .navbar {
-            max-width: 1150px;
+            max-width: 1200px;
             margin: auto;
             min-height: 75px;
+            padding: 0 25px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            padding: 0 25px;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 800;
-            color: #8c3f55;
+            font-size: 25px;
+            font-weight: bold;
+            color: #b85c38;
+            text-decoration: none;
         }
 
-        .logo span {
-            color: #c27b91;
-        }
-
-        .nav-links {
+        .menu {
             display: flex;
-            align-items: center;
-            gap: 30px;
+            gap: 10px;
             list-style: none;
         }
 
-        .nav-links a {
-            position: relative;
-            font-size: 15px;
-            font-weight: 600;
+        .menu a {
+            text-decoration: none;
             color: #333;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 8px;
             transition: 0.3s;
         }
 
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0;
-            height: 2px;
-            background: #a84f6a;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #a84f6a;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .menu a:hover,
+        .menu a.active {
+            background: #b85c38;
+            color: white;
         }
 
         .menu-button {
             display: none;
-            border: none;
             background: none;
-            font-size: 28px;
+            border: none;
+            font-size: 30px;
             cursor: pointer;
-            color: #8c3f55;
+            color: #b85c38;
         }
 
         /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            padding: 150px 25px 80px;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(198, 126, 147, 0.25),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #fffaf7 0%,
-                    #f7e8e8 100%
-                );
-        }
-
-        .hero-container {
-            max-width: 1150px;
-            width: 100%;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .hero-text small {
-            display: inline-block;
-            margin-bottom: 15px;
-
-            color: #a84f6a;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-            color: #522638;
-        }
-
-        .hero h1 span {
-            color: #a84f6a;
-        }
-
-        .hero p {
-            max-width: 600px;
-            font-size: 19px;
-            color: #5e5558;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 48px;
-            padding: 13px 25px;
-
-            border-radius: 30px;
-            border: 2px solid #a84f6a;
-
-            font-weight: 700;
-            cursor: pointer;
-
-            transition:
-                transform 0.25s,
-                background 0.25s,
-                color 0.25s,
-                box-shadow 0.25s;
-        }
-
-        .btn-primary {
-            background: #a84f6a;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #8c3f55;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(140, 63, 85, 0.25);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #a84f6a;
-        }
-
-        .btn-secondary:hover {
-            background: #a84f6a;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .hero-card {
-            min-height: 390px;
-
-            border-radius: 35px;
-            padding: 45px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            background: linear-gradient(
-                145deg,
-                #a84f6a,
-                #71364c
-            );
-
-            color: white;
-
-            box-shadow:
-                0 30px 70px rgba(96, 42, 59, 0.25);
-
-            transform: rotate(2deg);
-            transition: 0.4s;
-        }
-
-        .hero-card:hover {
-            transform: rotate(0deg) translateY(-5px);
-        }
-
-        .hero-card .icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .hero-card h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .hero-card p {
-            color: rgba(255,255,255,0.85);
-            margin: 0;
-            font-size: 16px;
-        }
-
-        /* =========================
-           SECTIONS
+           SEÇÕES
         ========================= */
 
         section {
-            scroll-margin-top: 85px;
-        }
-
-        .section {
+            min-height: 90vh;
             padding: 100px 25px;
+            display: flex;
+            align-items: center;
         }
 
-        .section-container {
-            max-width: 1150px;
+        .container {
+            width: 100%;
+            max-width: 1100px;
             margin: auto;
         }
 
-        .section-title {
+        /* =========================
+           INÍCIO
+        ========================= */
+
+        #inicio {
+            background:
+                linear-gradient(
+                    rgba(255, 250, 245, 0.92),
+                    rgba(255, 250, 245, 0.92)
+                ),
+                radial-gradient(circle at top right, #f4c7b5, transparent 40%);
+
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            color: #8f4328;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto 35px;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #b85c38;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid #b85c38;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background: transparent;
+            color: #b85c38;
+            transform: translateY(-3px);
+        }
+
+        .botao-secundario {
+            background: transparent;
+            color: #b85c38;
+            margin-left: 10px;
+        }
+
+        .botao-secundario:hover {
+            background: #b85c38;
+            color: white;
+        }
+
+        /* =========================
+           TÍTULOS
+        ========================= */
+
+        .titulo {
             text-align: center;
             margin-bottom: 55px;
         }
 
-        .section-title small {
-            display: block;
-            color: #a84f6a;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+        .titulo h2 {
+            font-size: 42px;
+            color: #8f4328;
+            margin-bottom: 12px;
         }
 
-        .section-title h2 {
-            font-size: clamp(32px, 5vw, 50px);
-            color: #522638;
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
+        .titulo p {
+            color: #666;
             max-width: 700px;
             margin: auto;
-            color: #6b6265;
         }
 
         /* =========================
-           O QUE É
+           SOBRE
         ========================= */
 
-        .about {
+        #sobre {
             background: white;
         }
 
-        .about-grid {
+        .sobre-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
 
-        .about-text h3 {
-            font-size: 32px;
-            color: #522638;
+        .sobre-texto h3 {
+            font-size: 30px;
+            color: #b85c38;
             margin-bottom: 20px;
         }
 
-        .about-text p {
+        .sobre-texto p {
             margin-bottom: 18px;
-            color: #5d5658;
+            color: #555;
         }
 
-        .highlight {
-            padding: 30px;
-            border-radius: 25px;
-            background: #f8e9eb;
-            border-left: 5px solid #a84f6a;
+        .caixa-destaque {
+            background: #fff1e9;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 6px solid #b85c38;
         }
 
-        .highlight strong {
-            color: #8c3f55;
+        .caixa-destaque h3 {
+            color: #8f4328;
+            margin-bottom: 15px;
         }
 
         /* =========================
-           CARDS
+           O QUE É MARKETING
         ========================= */
+
+        #marketing {
+            background: #fffaf5;
+        }
 
         .cards {
             display: grid;
@@ -373,354 +235,215 @@
 
         .card {
             background: white;
-            padding: 35px 28px;
-            border-radius: 25px;
-
-            border: 1px solid #f0dfe3;
-
-            box-shadow: 0 10px 30px rgba(70, 30, 40, 0.05);
-
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(70, 30, 40, 0.12);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
-        .card-icon {
-            width: 60px;
-            height: 60px;
+        .icone {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #fff0e8;
+            color: #b85c38;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 18px;
-
-            background: #f7e2e7;
-            color: #a84f6a;
-
-            font-size: 27px;
-
+            font-size: 25px;
             margin-bottom: 20px;
         }
 
         .card h3 {
-            color: #522638;
+            color: #8f4328;
             margin-bottom: 12px;
-            font-size: 22px;
+            font-size: 23px;
         }
 
         .card p {
-            color: #6b6265;
+            color: #666;
         }
 
         /* =========================
-           INFLUÊNCIA
+           COMO FUNCIONA
         ========================= */
 
-        .influence {
-            background: #fff5f4;
-        }
-
-        .influence-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .influence-item {
-            padding: 30px;
-            border-radius: 22px;
+        #funciona {
             background: white;
-            border: 1px solid #f1e0e3;
+        }
 
-            display: flex;
+        .passos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
-        .number {
-            flex-shrink: 0;
+        .passo {
+            text-align: center;
+            padding: 25px;
+        }
 
-            width: 45px;
-            height: 45px;
+        .numero {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
+            background: #b85c38;
+            color: white;
             border-radius: 50%;
 
-            background: #a84f6a;
-            color: white;
-            font-weight: 800;
+            font-size: 25px;
+            font-weight: bold;
         }
 
-        .influence-item h3 {
-            color: #522638;
-            margin-bottom: 8px;
+        .passo h3 {
+            color: #8f4328;
+            margin-bottom: 10px;
         }
 
-        .influence-item p {
-            color: #6b6265;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            padding: 90px 25px;
-
-            background: linear-gradient(
-                135deg,
-                #6f334b,
-                #a84f6a
-            );
-
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: clamp(32px, 5vw, 50px);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.85);
-        }
-
-        .cta .btn {
-            border-color: white;
-            background: white;
-            color: #8c3f55;
-        }
-
-        .cta .btn:hover {
-            background: transparent;
-            color: white;
+        .passo p {
+            color: #666;
         }
 
         /* =========================
-           FAQ
+           DÚVIDAS
         ========================= */
+
+        #duvidas {
+            background: #fffaf5;
+        }
 
         .faq {
-            background: white;
-        }
-
-        .faq-container {
             max-width: 850px;
             margin: auto;
         }
 
-        .faq-item {
-            border-bottom: 1px solid #ead9dd;
+        .pergunta {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
         }
 
-        .faq-question {
+        .pergunta button {
             width: 100%;
-            padding: 23px 5px;
+            border: none;
+            background: white;
+            padding: 22px 25px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            border: none;
-            background: none;
-
             text-align: left;
             font-size: 17px;
-            font-weight: 700;
-            color: #522638;
+            font-weight: bold;
+            color: #8f4328;
 
             cursor: pointer;
         }
 
-        .faq-question span {
+        .pergunta button:hover {
+            background: #fff5ef;
+        }
+
+        .resposta {
+            display: none;
+            padding: 0 25px 22px;
+            color: #666;
+        }
+
+        .pergunta.aberta .resposta {
+            display: block;
+        }
+
+        .sinal {
             font-size: 25px;
-            color: #a84f6a;
-
-            transition: transform 0.3s;
+            transition: 0.3s;
         }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-
-            transition:
-                max-height 0.35s ease,
-                padding 0.35s ease;
-        }
-
-        .faq-answer p {
-            color: #6b6265;
-            padding: 0 5px 20px;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
-
-        .faq-item.active .faq-question span {
+        .pergunta.aberta .sinal {
             transform: rotate(45deg);
         }
 
         /* =========================
-           FOOTER
+           RODAPÉ
         ========================= */
 
         footer {
-            background: #321923;
+            background: #8f4328;
             color: white;
-            padding: 55px 25px 25px;
-        }
-
-        .footer-container {
-            max-width: 1150px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 50px;
-        }
-
-        footer h3 {
-            margin-bottom: 15px;
+            text-align: center;
+            padding: 35px 20px;
         }
 
         footer p {
-            color: rgba(255,255,255,0.65);
+            margin: 5px;
         }
 
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
+        .voltar {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 8px 18px;
+            border-radius: 20px;
             transition: 0.3s;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .copyright {
-            max-width: 1150px;
-            margin: 40px auto 0;
-            padding-top: 20px;
-
-            border-top: 1px solid rgba(255,255,255,0.1);
-
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 14px;
-        }
-
-        /* =========================
-           BOTÃO TOPO
-        ========================= */
-
-        #topButton {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-
-            width: 48px;
-            height: 48px;
-
-            border: none;
-            border-radius: 50%;
-
-            background: #a84f6a;
-            color: white;
-
-            font-size: 20px;
-            cursor: pointer;
-
-            opacity: 0;
-            visibility: hidden;
-
-            transition: 0.3s;
-
-            z-index: 900;
-        }
-
-        #topButton.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #topButton:hover {
-            background: #8c3f55;
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           ANIMAÇÃO
-        ========================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: 0.7s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .voltar:hover {
+            background: white;
+            color: #8f4328;
         }
 
         /* =========================
            RESPONSIVO
         ========================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
 
             .menu-button {
                 display: block;
             }
 
-            .nav-links {
+            .menu {
                 position: absolute;
                 top: 75px;
                 left: 0;
                 width: 100%;
 
-                padding: 20px 25px;
-
-                background: #fffaf7;
+                background: white;
 
                 display: none;
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 18px;
 
-                box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+                padding: 15px 25px;
+
+                box-shadow: 0 8px 15px rgba(0,0,0,0.08);
             }
 
-            .nav-links.active {
+            .menu.aberto {
                 display: flex;
             }
 
-            .hero-container {
-                grid-template-columns: 1fr;
+            .menu a {
+                display: block;
             }
 
-            .hero-card {
-                min-height: 300px;
-            }
-
-            .about-grid {
+            .sobre-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -728,25 +451,19 @@
                 grid-template-columns: 1fr;
             }
 
-            .influence-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .passos {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
 
-            .navbar {
-                padding: 0 18px;
+            section {
+                padding: 80px 20px;
             }
 
-            .hero {
-                padding-left: 18px;
-                padding-right: 18px;
+            .titulo h2 {
+                font-size: 32px;
             }
 
             .hero h1 {
@@ -757,20 +474,21 @@
                 font-size: 17px;
             }
 
-            .section {
-                padding: 75px 18px;
+            .botao {
+                display: block;
+                margin: 10px 0;
             }
 
-            .buttons {
-                flex-direction: column;
+            .botao-secundario {
+                margin-left: 0;
             }
 
-            .buttons .btn {
-                width: 100%;
+            .passos {
+                grid-template-columns: 1fr;
             }
 
-            .hero-card {
-                padding: 30px;
+            .navbar {
+                padding: 0 18px;
             }
         }
     </style>
@@ -779,106 +497,156 @@
 <body>
 
     <!-- =========================
-         HEADER
+         MENU
     ========================== -->
 
     <header>
-        <div class="navbar">
+        <nav class="navbar">
 
             <a href="#inicio" class="logo">
-                Essência<span>Marketing</span>
+                Essência Marketing
             </a>
 
             <button
                 class="menu-button"
                 id="menuButton"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
+                aria-label="Abrir menu">
                 ☰
             </button>
 
-            <ul class="nav-links" id="navLinks">
+            <ul class="menu" id="menu">
+
                 <li>
-                    <a href="#inicio">Início</a>
+                    <a href="#inicio" class="menu-link active">
+                        Início
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#o-que-e">O que é</a>
+                    <a href="#sobre" class="menu-link">
+                        Sobre
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#como-influencia">Como influencia</a>
+                    <a href="#marketing" class="menu-link">
+                        O que é Marketing?
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#duvidas">Dúvidas</a>
+                    <a href="#funciona" class="menu-link">
+                        Como ele funciona?
+                    </a>
                 </li>
+
+                <li>
+                    <a href="#duvidas" class="menu-link">
+                        Dúvidas Frequentes
+                    </a>
+                </li>
+
             </ul>
 
-        </div>
+        </nav>
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
     <main>
 
-        <section class="hero" id="inicio">
+        <!-- =========================
+             INÍCIO
+        ========================== -->
 
-            <div class="hero-container">
+        <section id="inicio">
 
-                <div class="hero-text reveal">
+            <div class="container hero">
 
-                    <small>Marketing e conexão</small>
+                <h1>
+                    Marketing que conecta
+                    marcas e pessoas.
+                </h1>
 
-                    <h1>
-                        Marketing que
-                        <span>conecta</span>
-                        marcas e pessoas.
-                    </h1>
+                <p>
+                    Descubra o que é marketing, como ele funciona
+                    e por que ele é tão importante para empresas,
+                    marcas e consumidores.
+                </p>
+
+                <a href="#marketing" class="botao">
+                    O que é Marketing?
+                </a>
+
+                <a href="#funciona" class="botao botao-secundario">
+                    Como funciona?
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section id="sobre">
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>Sobre</h2>
 
                     <p>
-                        Mais do que vender produtos, marketing é compreender
-                        pessoas, criar valor e construir relacionamentos.
+                        Conheça a importância do marketing e sua
+                        relação com empresas e consumidores.
                     </p>
 
-                    <div class="buttons">
+                </div>
 
-                        <a
-                            href="#o-que-e"
-                            class="btn btn-primary"
-                        >
-                            Conheça o conceito
-                        </a>
+                <div class="sobre-grid">
 
-                        <a
-                            href="#como-influencia"
-                            class="btn btn-secondary"
-                        >
-                            Como influencia?
+                    <div class="sobre-texto">
+
+                        <h3>
+                            Muito além da publicidade
+                        </h3>
+
+                        <p>
+                            O marketing está presente em praticamente
+                            todas as relações entre marcas e pessoas.
+                            Ele ajuda as empresas a entenderem seus
+                            consumidores e oferecerem produtos e
+                            serviços que atendam às suas necessidades.
+                        </p>
+
+                        <p>
+                            Por meio de pesquisas, planejamento,
+                            comunicação e estratégias, o marketing
+                            aproxima empresas de seus públicos.
+                        </p>
+
+                        <a href="#marketing" class="botao">
+                            Entender o Marketing
                         </a>
 
                     </div>
 
-                </div>
+                    <div class="caixa-destaque">
 
+                        <h3>
+                            Por que o marketing é importante?
+                        </h3>
 
-                <div class="hero-card reveal">
+                        <p>
+                            Porque ele permite conhecer melhor o público,
+                            identificar oportunidades, construir marcas
+                            fortes e criar relacionamentos duradouros
+                            com os consumidores.
+                        </p>
 
-                    <div class="icon">✦</div>
-
-                    <h2>
-                        Estratégia + Pessoas
-                    </h2>
-
-                    <p>
-                        O marketing transforma necessidades,
-                        desejos e ideias em experiências capazes
-                        de gerar valor.
-                    </p>
+                    </div>
 
                 </div>
 
@@ -891,162 +659,89 @@
              O QUE É MARKETING
         ========================== -->
 
-        <section
-            class="section about"
-            id="o-que-e"
-        >
+        <section id="marketing">
 
-            <div class="section-container">
+            <div class="container">
 
-                <div class="section-title reveal">
-
-                    <small>O conceito</small>
-
-                    <h2>O que é marketing?</h2>
-
-                    <p>
-                        Marketing é muito mais do que propaganda.
-                        Ele envolve estratégia, comunicação,
-                        relacionamento e criação de valor.
-                    </p>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="about-text reveal">
-
-                        <h3>
-                            Entender para conectar
-                        </h3>
-
-                        <p>
-                            Marketing é o conjunto de estratégias
-                            utilizadas para compreender as necessidades
-                            e desejos das pessoas e, a partir disso,
-                            oferecer soluções que gerem valor.
-                        </p>
-
-                        <p>
-                            Ele está presente desde a criação de um produto
-                            até a maneira como uma marca conversa com
-                            seu público.
-                        </p>
-
-                        <a
-                            href="#como-influencia"
-                            class="btn btn-primary"
-                        >
-                            Ver como influencia
-                        </a>
-
-                    </div>
-
-
-                    <div class="highlight reveal">
-
-                        <p>
-                            <strong>
-                                Marketing não é apenas vender.
-                            </strong>
-                        </p>
-
-                        <br>
-
-                        <p>
-                            É conhecer o público, identificar oportunidades,
-                            criar soluções, comunicar uma proposta e construir
-                            relações duradouras.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PILARES
-        ========================== -->
-
-        <section class="section">
-
-            <div class="section-container">
-
-                <div class="section-title reveal">
-
-                    <small>Principais pilares</small>
+                <div class="titulo">
 
                     <h2>
-                        O marketing acontece em várias etapas
+                        O que é Marketing?
                     </h2>
 
                     <p>
-                        Uma boa estratégia considera diferentes elementos
-                        para criar uma experiência completa.
+                        Marketing é um conjunto de estratégias e ações
+                        utilizadas para criar, comunicar e entregar
+                        valor aos consumidores.
                     </p>
 
                 </div>
-
 
                 <div class="cards">
 
-                    <article class="card reveal">
+                    <div class="card">
 
-                        <div class="card-icon">
-                            ♡
+                        <div class="icone">
+                            🎯
                         </div>
 
                         <h3>
-                            Pessoas
+                            Conhecer o público
                         </h3>
 
                         <p>
-                            Conhecer o público é essencial para entender
-                            seus comportamentos, necessidades e desejos.
+                            O marketing procura entender quem são
+                            os consumidores, seus desejos, necessidades,
+                            comportamentos e interesses.
                         </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="card reveal">
+                    <div class="card">
 
-                        <div class="card-icon">
-                            ◆
+                        <div class="icone">
+                            💡
                         </div>
 
                         <h3>
-                            Estratégia
+                            Criar valor
                         </h3>
 
                         <p>
-                            Estratégias ajudam marcas a definir objetivos
-                            e encontrar maneiras eficientes de alcançá-los.
+                            A partir do conhecimento do público,
+                            as empresas podem desenvolver produtos,
+                            serviços e experiências relevantes.
                         </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="card reveal">
+                    <div class="card">
 
-                        <div class="card-icon">
-                            ✦
+                        <div class="icone">
+                            📢
                         </div>
 
                         <h3>
-                            Valor
+                            Comunicar
                         </h3>
 
                         <p>
-                            O objetivo é entregar algo relevante para o
-                            público e criar uma percepção positiva da marca.
+                            O marketing também utiliza diferentes
+                            canais para comunicar uma mensagem e
+                            aproximar a marca de seu público.
                         </p>
 
-                    </article>
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top:45px;">
+
+                    <a href="#funciona" class="botao">
+                        Ver como funciona
+                    </a>
 
                 </div>
 
@@ -1056,112 +751,107 @@
 
 
         <!-- =========================
-             COMO INFLUENCIA
+             COMO FUNCIONA
         ========================== -->
 
-        <section
-            class="section influence"
-            id="como-influencia"
-        >
+        <section id="funciona">
 
-            <div class="section-container">
+            <div class="container">
 
-                <div class="section-title reveal">
-
-                    <small>Na prática</small>
+                <div class="titulo">
 
                     <h2>
-                        Como o marketing influencia?
+                        Como o Marketing funciona?
                     </h2>
 
                     <p>
-                        Ele participa de diversas decisões que fazem parte
-                        da relação entre consumidores e marcas.
+                        O processo de marketing envolve diferentes
+                        etapas para compreender o mercado e criar
+                        estratégias eficientes.
                     </p>
 
                 </div>
 
+                <div class="passos">
 
-                <div class="influence-grid">
+                    <div class="passo">
 
-                    <article class="influence-item reveal">
-
-                        <div class="number">
+                        <div class="numero">
                             1
                         </div>
 
-                        <div>
-                            <h3>
-                                Percepção de marca
-                            </h3>
+                        <h3>
+                            Pesquisa
+                        </h3>
 
-                            <p>
-                                A comunicação ajuda a construir a forma como
-                                as pessoas enxergam uma empresa ou produto.
-                            </p>
-                        </div>
+                        <p>
+                            Primeiro, é necessário conhecer o mercado,
+                            os concorrentes e principalmente o público.
+                        </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="influence-item reveal">
+                    <div class="passo">
 
-                        <div class="number">
+                        <div class="numero">
                             2
                         </div>
 
-                        <div>
-                            <h3>
-                                Decisão de compra
-                            </h3>
+                        <h3>
+                            Planejamento
+                        </h3>
 
-                            <p>
-                                Informações, experiências e comunicação podem
-                                influenciar a escolha entre diferentes opções.
-                            </p>
-                        </div>
+                        <p>
+                            Depois são definidos objetivos e estratégias
+                            para alcançar os resultados desejados.
+                        </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="influence-item reveal">
+                    <div class="passo">
 
-                        <div class="number">
+                        <div class="numero">
                             3
                         </div>
 
-                        <div>
-                            <h3>
-                                Relacionamento
-                            </h3>
+                        <h3>
+                            Ação
+                        </h3>
 
-                            <p>
-                                Marcas podem utilizar o marketing para criar
-                                proximidade e manter contato com seu público.
-                            </p>
-                        </div>
+                        <p>
+                            As estratégias são colocadas em prática
+                            através de campanhas, conteúdos e canais.
+                        </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="influence-item reveal">
+                    <div class="passo">
 
-                        <div class="number">
+                        <div class="numero">
                             4
                         </div>
 
-                        <div>
-                            <h3>
-                                Experiência
-                            </h3>
+                        <h3>
+                            Análise
+                        </h3>
 
-                            <p>
-                                Desde o primeiro contato até o pós-venda,
-                                cada interação pode influenciar a experiência.
-                            </p>
-                        </div>
+                        <p>
+                            Por fim, os resultados são analisados
+                            para descobrir o que pode ser melhorado.
+                        </p>
 
-                    </article>
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top:45px;">
+
+                    <a href="#duvidas" class="botao">
+                        Tenho uma dúvida
+                    </a>
 
                 </div>
 
@@ -1171,86 +861,77 @@
 
 
         <!-- =========================
-             CTA
+             DÚVIDAS FREQUENTES
         ========================== -->
 
-        <section class="cta">
+        <section id="duvidas">
 
-            <div class="section-container reveal">
+            <div class="container">
 
-                <h2>
-                    Marketing está em todo lugar.
-                </h2>
-
-                <p>
-                    Agora que você conhece o conceito, descubra as principais
-                    dúvidas sobre marketing.
-                </p>
-
-                <a
-                    href="#duvidas"
-                    class="btn"
-                >
-                    Ver dúvidas
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             FAQ
-        ========================== -->
-
-        <section
-            class="section faq"
-            id="duvidas"
-        >
-
-            <div class="section-container">
-
-                <div class="section-title reveal">
-
-                    <small>Perguntas frequentes</small>
+                <div class="titulo">
 
                     <h2>
-                        Dúvidas sobre marketing
+                        Dúvidas Frequentes
                     </h2>
 
                     <p>
-                        Clique em uma pergunta para visualizar a resposta.
+                        Confira algumas das principais dúvidas
+                        sobre marketing.
                     </p>
 
                 </div>
 
+                <div class="faq">
 
-                <div class="faq-container">
+
+                    <div class="pergunta">
+
+                        <button>
+                            <span>
+                                O que é marketing?
+                            </span>
+
+                            <span class="sinal">
+                                +
+                            </span>
+                        </button>
+
+                        <div class="resposta">
+
+                            <p>
+                                Marketing é o conjunto de estratégias
+                                utilizadas para entender consumidores,
+                                criar valor e estabelecer uma relação
+                                entre empresas e seus públicos.
+                            </p>
+
+                        </div>
+
+                    </div>
 
 
-                    <div class="faq-item reveal">
+                    <div class="pergunta">
 
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
+                        <button>
+
                             <span>
                                 Marketing é apenas publicidade?
                             </span>
 
-                            <span>
+                            <span class="sinal">
                                 +
                             </span>
+
                         </button>
 
-                        <div class="faq-answer">
+                        <div class="resposta">
 
                             <p>
-                                Não. A publicidade é apenas uma das ferramentas
-                                utilizadas pelo marketing. Marketing também
-                                envolve pesquisa, estratégia, produto, preço,
-                                distribuição, comunicação e relacionamento.
+                                Não. A publicidade é apenas uma das
+                                ferramentas do marketing. O marketing
+                                também envolve pesquisa, planejamento,
+                                produto, preço, distribuição,
+                                relacionamento e análise de resultados.
                             </p>
 
                         </div>
@@ -1258,57 +939,28 @@
                     </div>
 
 
-                    <div class="faq-item reveal">
+                    <div class="pergunta">
 
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
-                            <span>
-                                Qual é o objetivo do marketing?
-                            </span>
+                        <button>
 
-                            <span>
-                                +
-                            </span>
-                        </button>
-
-                        <div class="faq-answer">
-
-                            <p>
-                                O objetivo é compreender o público e criar
-                                estratégias capazes de gerar valor tanto para
-                                as pessoas quanto para a organização.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="faq-item reveal">
-
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
                             <span>
                                 Pequenas empresas precisam de marketing?
                             </span>
 
-                            <span>
+                            <span class="sinal">
                                 +
                             </span>
+
                         </button>
 
-                        <div class="faq-answer">
+                        <div class="resposta">
 
                             <p>
-                                Sim. Empresas de diferentes tamanhos podem
-                                utilizar marketing para conhecer seu público,
-                                fortalecer sua marca e conquistar clientes.
+                                Sim. Empresas de todos os tamanhos podem
+                                utilizar o marketing para conhecer melhor
+                                seus clientes, divulgar seus produtos,
+                                fortalecer sua marca e conquistar novos
+                                consumidores.
                             </p>
 
                         </div>
@@ -1316,28 +968,28 @@
                     </div>
 
 
-                    <div class="faq-item reveal">
+                    <div class="pergunta">
 
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
+                        <button>
+
                             <span>
-                                O marketing está presente nas redes sociais?
+                                Qual é a importância das redes sociais?
                             </span>
 
-                            <span>
+                            <span class="sinal">
                                 +
                             </span>
+
                         </button>
 
-                        <div class="faq-answer">
+                        <div class="resposta">
 
                             <p>
-                                Sim. As redes sociais podem ser utilizadas
-                                para comunicação, relacionamento, produção
-                                de conteúdo e construção de posicionamento.
+                                As redes sociais são importantes canais
+                                de comunicação e relacionamento. Elas
+                                permitem que as marcas publiquem conteúdos,
+                                interajam com seu público e fortaleçam
+                                sua presença digital.
                             </p>
 
                         </div>
@@ -1345,34 +997,68 @@
                     </div>
 
 
-                    <div class="faq-item reveal">
+                    <div class="pergunta">
 
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
+                        <button>
+
                             <span>
-                                Marketing serve somente para vender?
+                                O marketing ajuda a aumentar as vendas?
                             </span>
 
-                            <span>
+                            <span class="sinal">
                                 +
                             </span>
+
                         </button>
 
-                        <div class="faq-answer">
+                        <div class="resposta">
 
                             <p>
-                                Não. Embora as vendas sejam importantes,
-                                marketing também trabalha reconhecimento
-                                de marca, relacionamento, experiência,
-                                fidelização e criação de valor.
+                                Pode ajudar. Estratégias de marketing
+                                bem planejadas podem aumentar o alcance
+                                da marca, atrair potenciais clientes e
+                                melhorar o relacionamento com consumidores.
                             </p>
 
                         </div>
 
                     </div>
+
+
+                    <div class="pergunta">
+
+                        <button>
+
+                            <span>
+                                O marketing está presente no nosso dia a dia?
+                            </span>
+
+                            <span class="sinal">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="resposta">
+
+                            <p>
+                                Sim. Ele aparece em anúncios, embalagens,
+                                preços, lojas, aplicativos, redes sociais,
+                                promoções e diversas outras experiências
+                                que temos como consumidores.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top:40px;">
+
+                    <a href="#inicio" class="botao">
+                        Voltar ao início
+                    </a>
 
                 </div>
 
@@ -1384,74 +1070,115 @@
 
 
     <!-- =========================
-         FOOTER
+         RODAPÉ
     ========================== -->
 
     <footer>
 
-        <div class="footer-container">
+        <p>
+            <strong>Essência Marketing</strong>
+        </p>
 
-            <div>
+        <p>
+            Conhecimento que conecta marcas e pessoas.
+        </p>
 
-                <h3>
-                    Essência Marketing
-                </h3>
+        <a href="#inicio" class="voltar">
+            ↑ Voltar ao início
+        </a>
 
-                <p>
-                    Um espaço para entender como o marketing conecta
-                    marcas, estratégias e pessoas.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Navegação
-                </h3>
-
-                <ul class="footer-links">
-
-                    <li>
-                        <a href="#inicio">
-                            Início
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#o-que-e">
-                            O que é
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#como-influencia">
-                            Como influencia
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#duvidas">
-                            Dúvidas
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
+    </footer>
 
 
-            <div>
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
-                <h3>
-                    Conheça
-                </h3>
+    <script>
 
-                <ul class="footer-links">
+        /* =========================
+           MENU MOBILE
+        ========================== */
 
-                    <li>
-                        <a href="#o-que-e">
-                            Conceito de marketing
-                        </a>
-                    </li>
+        const menuButton = document.getElementById("menuButton");
+        const menu = document.getElementById("menu");
+
+        menuButton.addEventListener("click", function () {
+
+            menu.classList.toggle("aberto");
+
+        });
+
+
+        /* =========================
+           FECHAR MENU AO CLICAR
+        ========================== */
+
+        const links = document.querySelectorAll(".menu-link");
+
+        links.forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                menu.classList.remove("aberto");
+
+            });
+
+        });
+
+
+        /* =========================
+           DESTACAR ABA ATIVA
+        ========================== */
+
+        const sections = document.querySelectorAll("section");
+
+        window.addEventListener("scroll", function() {
+
+            let atual = "";
+
+            sections.forEach(function(section) {
+
+                const topo = section.offsetTop - 150;
+
+                if (window.scrollY >= topo) {
+                    atual = section.getAttribute("id");
+                }
+
+            });
+
+            links.forEach(function(link) {
+
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === "#" + atual) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
+
+
+        /* =========================
+           DÚVIDAS FREQUENTES
+        ========================== */
+
+        const perguntas = document.querySelectorAll(".pergunta");
+
+        perguntas.forEach(function(pergunta) {
+
+            const botao = pergunta.querySelector("button");
+
+            botao.addEventListener("click", function() {
+
+                pergunta.classList.toggle("aberta");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
